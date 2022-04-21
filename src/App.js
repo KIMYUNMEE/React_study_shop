@@ -3,7 +3,7 @@ import './App.css';
 import { Navbar, Nav, NavDropdown, Container, Button } from 'react-bootstrap';
 import data from './data.js';
 function App() {
-   let [shoes,shoes변경] = useState(data);
+   let [shoes ,shoes변경 ] = useState(data);
   return (
     <div className="App">
  <Navbar bg="light" expand="lg">
