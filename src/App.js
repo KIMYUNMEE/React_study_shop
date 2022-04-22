@@ -58,3 +58,6 @@ function App() {
 }
 
 export default App;
+//관리해야할 데이터가 너무 많을 땐 따로 js파일에 보관합니다. export default를 이용해서 데이터를 내보내고
+//import를 이용해서 데이터를 받아옵니다. 그리고 React에서는 데이터를 받아올 때 같은 경로에 위치하고 있더라도 앞에 ./을 반드시 적어주어야 합니다.
+//그리고 useState의 ()에 import 변수명 from 파일명에서 변수명을 넣어줍니다.
