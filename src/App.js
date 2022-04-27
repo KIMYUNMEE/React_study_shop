@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { Navbar, Nav, NavDropdown, Container, Button } from 'react-bootstrap';
 import data from './data.js';
+import { Link, Route, Switch } from 'react-router-dom';
 function App() {
    let [shoes ,shoes변경 ] = useState(data);
   return (
@@ -12,8 +13,8 @@ function App() {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#link">Link</Nav.Link>
+        <Nav.Link>Home</Nav.Link>
+        <Nav.Link>Detail</Nav.Link>
         <NavDropdown title="Dropdown" id="basic-nav-dropdown">
           <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
           <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -25,6 +26,12 @@ function App() {
     </Navbar.Collapse>
   </Container>
       </Navbar>
+       <Route path="/"> 
+        <div>메인페이지인데요</div>
+      </Route>
+      <Route path="/detail">
+        <div>상세페이지인데요</div>
+      </Route>
       <div className="background">
         <div>
         <h1>
@@ -42,6 +49,7 @@ function App() {
         </div>
       </div>
     </div>
+    
   );
 }
 function Card(props) {
