@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { Navbar, Nav, NavDropdown, Container, Button } from 'react-bootstrap';
 import data from './data.js';
+import Detail from './Detail.js';
 import { Link, Route, Switch } from 'react-router-dom';
 function App() {
    let [shoes ,shoes변경 ] = useState(data);
@@ -30,8 +31,8 @@ function App() {
        <Route exact path="/"> 
         <div>메인페이지인데요</div>
       </Route>
-      <Route path="/detail">
-        <div>상세페이지인데요</div>
+       <Route path="/Detail">
+        <Detail/>
       </Route>
       <div className="background">
         <div>
@@ -44,9 +45,11 @@ function App() {
       </div>
       <div className="container">
         <div className="row">
-          <Card shoes={shoes[0]} />
-          <Card shoes={shoes[1]} />
-          <Card shoes={shoes[2]} />
+          {
+            shoes.map((a, i) => {
+              return <Card shoes={shoes[i]} i={i}/>
+            })
+          }
         </div>
       </div>
     </div>
@@ -56,7 +59,7 @@ function App() {
 function Card(props) {
   return (
     <div className="col-md-4">
-      <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
+     <img src={ 'https://codingapple1.github.io/shop/shoes' + (props.i+1) + '.jpg' } width="100%"/>
       <h4>{ props.shoes.title }</h4>
       <p>{ props.shoes.content } & { props.shoes.price }</p>
     </div>
