@@ -26,7 +26,8 @@ function App() {
     </Navbar.Collapse>
   </Container>
       </Navbar>
-       <Route path="/"> 
+      {/* 라우터 연결시 /이 있을 때만 메인페이지가 나오게 하려면 Route옆에 exact를 추가한다. */}
+       <Route exact path="/"> 
         <div>메인페이지인데요</div>
       </Route>
       <Route path="/detail">
