@@ -52,6 +52,9 @@ function App() {
       <Route path="/Detail">
 <Detail/>
       </Route>
+       <Route path="/:id">
+        <div>새로 만든 route입니다</div>
+      </Route>
     </div> 
   );
       
